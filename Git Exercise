@@ -1,0 +1,56 @@
+nickbutani@Nicks-MacBook-Air ~ % mkdir learn_git_again
+nickbutani@Nicks-MacBook-Air ~ % cd learn_git_again
+nickbutani@Nicks-MacBook-Air learn_git_again % touch third.txt
+nickbutani@Nicks-MacBook-Air learn_git_again % git init
+Initialized empty Git repository in /Users/nickbutani/learn_git_again/.git/
+nickbutani@Nicks-MacBook-Air learn_git_again % git add third.txt
+nickbutani@Nicks-MacBook-Air learn_git_again % git commit -m "adding third.txt"
+[main (root-commit) e6254de] adding third.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 third.txt
+nickbutani@Nicks-MacBook-Air learn_git_again % git log
+commit e6254dec90e4749cdec2c647dcf43b1329231ee7 (HEAD -> main)
+Author: NickButani <Naitikbu@gmail.com>
+Date:   Sat Mar 2 18:32:16 2024 -0500
+
+    adding third.txt
+nickbutani@Nicks-MacBook-Air learn_git_again % touch fourth.txt
+nickbutani@Nicks-MacBook-Air learn_git_again % git add fourth.txt
+nickbutani@Nicks-MacBook-Air learn_git_again % git commit -m "adding fourth.txt"
+[main 7069209] adding fourth.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 fourth.txt
+nickbutani@Nicks-MacBook-Air learn_git_again % rm -r third.txt 
+nickbutani@Nicks-MacBook-Air learn_git_again % git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+nickbutani@Nicks-MacBook-Air learn_git_again % git add -u
+nickbutani@Nicks-MacBook-Air learn_git_again % git commit -m "removing third.txt"
+[main 33ec661] removing third.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 third.txt
+nickbutani@Nicks-MacBook-Air learn_git_again % git log
+commit 33ec661bacb8316d13e39528e694079bdcdbc906 (HEAD -> main)
+Author: NickButani <Naitikbu@gmail.com>
+Date:   Sat Mar 2 18:35:38 2024 -0500
+
+    removing third.txt
+
+commit 7069209e66fc961f07274073ea34a07af1158e0a
+Author: NickButani <Naitikbu@gmail.com>
+Date:   Sat Mar 2 18:33:05 2024 -0500
+
+    adding fourth.txt
+
+commit e6254dec90e4749cdec2c647dcf43b1329231ee7
+Author: NickButani <Naitikbu@gmail.com>
+Date:   Sat Mar 2 18:32:16 2024 -0500
+
+    adding third.txt
+nickbutani@Nicks-MacBook-Air learn_git_again % git config --global core.pager 'cat'
+nickbutani@Nicks-MacBook-Air learn_git_again % git config --global --list
+user.name=NickButani
+user.email=Naitikbu@gmail.com
+core.pager=cat
