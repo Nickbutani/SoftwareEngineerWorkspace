@@ -1,0 +1,60 @@
+Part 1:
+
+nickbutani@Nicks-MacBook-Air ~ % mkdir first
+nickbutani@Nicks-MacBook-Air ~ % cd first
+nickbutani@Nicks-MacBook-Air first % touch person.txt
+nickbutani@Nicks-MacBook-Air first % mv person.txt another.txt
+nickbutani@Nicks-MacBook-Air first % cp another.txt copy.txt
+nickbutani@Nicks-MacBook-Air first % rm copy.txt
+nickbutani@Nicks-MacBook-Air first % cp first second
+cp: first: No such file or directory
+nickbutani@Nicks-MacBook-Air first % cp -f first second
+cp: first: No such file or directory
+nickbutani@Nicks-MacBook-Air first % cp -r first second
+cp: first: No such file or directory
+nickbutani@Nicks-MacBook-Air first % cp -R first second
+cp: first: No such file or directory
+nickbutani@Nicks-MacBook-Air first % cd ..
+nickbutani@Nicks-MacBook-Air ~ % cp -R first second
+nickbutani@Nicks-MacBook-Air ~ % rmdir second
+rmdir: second: Directory not empty
+nickbutani@Nicks-MacBook-Air ~ % rmdir -rf second
+rmdir: illegal option -- r
+usage: rmdir [-pv] directory ...
+nickbutani@Nicks-MacBook-Air ~ % rm -r second
+
+
+Part 2:
+
+1. What does the man command do? Type in man rm. How do you scroll and get out?
+A- man command used to display user manual of whatever command user want to use. You can use S, down errow or mouse to scroll down and use Q to get out.
+
+2. Look at the man page for ls. What does the -l flag do? What does the -a flag do?
+A- When -l flag used it will list files in long formate. When -a flag used it will include directory entries whose name begin with ('.').
+
+3. How do you jump between words in the terminal?
+A- You can jump between the words in the terminal by using Option/Alt + left/right.
+
+4. How do you get to the end of a line in terminal?
+A- You can get to end if the line using Command + e shortcut.
+
+5. How do you move your cursor to the beginning in terminal?
+A- You can use Command + a to move cursor to the beginning.
+
+6. How do you delete a word (without pressing backspace multiple times) in terminal?
+A- You can use Command + w to delete the word. 
+
+7. What is the difference between a terminal and shell?
+A- a terminal is a program that provides a user interface, a shell is a command-line interpreter that processes commands.
+
+8. What is an absolute path?
+A- Path that start from root directory and give complete location of file.
+
+9. What is an relative path?
+A- Path that start a current location.
+
+10. What is a flag? Give three examples of flags you have used.
+A- Flag gives additional support to execute the command. I have used -r with rm command and cp command. -a and -l for the ls command.
+
+11. What do the r and f flags do with the rm command?
+A- r flag attempt to remove the file hierarchy rooted in each file argument. f flag attempt to remove the files without prompting for confirmation, regardless of the file's permissions.
