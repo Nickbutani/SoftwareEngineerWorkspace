@@ -1,0 +1,50 @@
+- What git command creates a branch?
+A - git branch "name" creates a branch.
+
+- What is the difference between a fast-forward and recursive merge?
+A - When there is no commit to be done on main branch while working in new branch, thats where fast-forward merge happens.
+
+- What git command changes to another branch?
+A - git checkout command change the branch.
+
+- What git command deletes a branch?
+A - git branch -d command will delete the branch.
+
+- How do merge conflicts happen?
+A - When Git can not choose what file or folder to merge when merging since there have been different commits with changes to the same file
+
+
+nickbutani@Nicks-MacBook-Air ~ % mkdir merge-practice
+cd merge-practice
+git init
+
+Initialized empty Git repository in /Users/nickbutani/merge-practice/.git/
+nickbutani@Nicks-MacBook-Air merge-practice % echo "This is a file on the master branch" > file.txt
+nickbutani@Nicks-MacBook-Air merge-practice % git add file.txt
+nickbutani@Nicks-MacBook-Air merge-practice % git commit -m "Add file.txt to master branch"
+[main (root-commit) 117d02e] Add file.txt to master branch
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file.txt
+nickbutani@Nicks-MacBook-Air merge-practice % git checkout -b feature-branch
+Switched to a new branch 'feature-branch'
+nickbutani@Nicks-MacBook-Air merge-practice % echo "This is a new line added in the feature branch" >> file.txt
+nickbutani@Nicks-MacBook-Air merge-practice % git add file.txt
+nickbutani@Nicks-MacBook-Air merge-practice % git commit -m "Add a new line to file.txt on feature branch"
+[feature-branch 7b287e6] Add a new line to file.txt on feature branch
+ 1 file changed, 1 insertion(+)
+nickbutani@Nicks-MacBook-Air merge-practice % git checkout master
+error: pathspec 'master' did not match any file(s) known to git
+nickbutani@Nicks-MacBook-Air merge-practice % git checkout main  
+Switched to branch 'main'
+nickbutani@Nicks-MacBook-Air merge-practice % echo "This is a conflicting change made on the master branch" >> file.txt
+nickbutani@Nicks-MacBook-Air merge-practice % git add file.txt
+nickbutani@Nicks-MacBook-Air merge-practice % git commit -m "Make conflicting change on master branch"
+[main 10c4875] Make conflicting change on master branch
+ 1 file changed, 1 insertion(+)
+nickbutani@Nicks-MacBook-Air merge-practice % git merge feature-branch
+Auto-merging file.txt
+CONFLICT (content): Merge conflict in file.txt
+Automatic merge failed; fix conflicts and then commit the result.
+nickbutani@Nicks-MacBook-Air merge-practice % git add file.txt
+nickbutani@Nicks-MacBook-Air merge-practice % git commit -m "Merge feature-branch into master"
+[main 1c67818] Merge feature-branch into master
