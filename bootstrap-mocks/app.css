@@ -1,0 +1,15 @@
+.jumbotron{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: auto;
+    padding: 0;
+}
+
+.card{
+    --bs-border-width: 0;
+}
+
+
