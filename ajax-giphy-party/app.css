@@ -1,0 +1,76 @@
+body{
+    background: linear-gradient(to right, #d3cce3, #e9e4f0);
+    
+}
+
+
+.main-div{
+    height: 50vh;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.intro-div{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.head{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.search-form{
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gifs-pic{
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    position: absolute;
+    left:3%;
+    right:3%;
+}
+
+.gifs{
+    padding: 2rem;
+    border: 0.5px solid black;
+    
+}
+
+button {
+    font-family: monospace;
+    font-size: 1.5rem;
+    color: #FAFAFA;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 40px;
+    border: 2px solid #FAFAFA;
+    background: #252525;
+    box-shadow: 3px 3px #fafafa;
+    cursor: pointer;
+    margin: 35px 0;
+  }
+  
+  button:active {
+    box-shadow: none;
+    transform: translate(3px, 3px);
+  }
