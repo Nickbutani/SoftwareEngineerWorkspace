@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{survey_title}}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ survey_title }}</h1>
+    <p>{{ instructions }}</p>
+    <button onclick="window.location.href='{{url_for('question', question_index=0) }}'">Start</button>
+{% endblock %}
