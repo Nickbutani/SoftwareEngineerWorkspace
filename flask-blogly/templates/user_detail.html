@@ -1,0 +1,16 @@
+{% extends 'home.html' %}
+
+{% block heading %}
+User Detail
+{% endblock %}
+
+{% block content %}
+<div class="card" style="width: 18rem;">
+    <img src="{{ user.image_url }}" class="card-img-top" alt="{{ user.first_name }} {{ user.last_name }}">
+    <div class="card-body">
+        <h5 class="card-title">{{ user.first_name }} {{ user.last_name }}</h5>
+        <a href="{{ url_for('update_user', user_id=user.id) }}" class="btn btn-primary">Edit</a>
+        <a href="{{ url_for('delete_user', user_id=user.id) }}" class="btn btn-danger">Delete</a>
+    </div>
+</div>
+{% endblock %}

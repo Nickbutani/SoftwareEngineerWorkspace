@@ -1,0 +1,25 @@
+{% extends 'home.html' %}
+
+{% block heading %} 
+Add User
+{% endblock %}
+
+{% block content %}
+<form method="POST">
+    <div class="form-group">
+        <label for="first_name">First Name</label>
+        <input type="text" class="form-control" id="first_name" name="first_name">
+    </div>
+    <div class="form-group">
+        <label for="last_name">Last Name</label>
+        <input type="text" class="form-control" id="last_name" name="last_name">
+    </div>
+    <div class="form-group">
+        <lable for="image-url">Image URL</lable>
+        <input type="text" class="form-control" id="image_url" name="image_url">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}
