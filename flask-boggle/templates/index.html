@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Boggle Board</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1>Boggle Board</h1>
+    <table>
+    {% for row in board %}
+        <tr>
+        {% for letter in row %}
+            <td>{{ letter }}</td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </table>
+
+    <form id="word-form" onsubmit="checkWord(event)">
+        <input type="text" id="word-input" autocomplete="off" required>
+        <button type="submit">Check Word</button>
+    </form>
+    <p id="message"></p>
+    <p>Score: <span id="score">0</span></p>
+    <a href="{{ url_for('home') }}"><button>Restart Game</button></a>
+    
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
