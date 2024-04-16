@@ -12,8 +12,19 @@ Post Detail
         <p class="card-text">
             by {{ post.user.first_name }} {{ post.user.last_name }}
         </p>
+        {% if post.tags %}
+            <p class="card-text">
+                Tags:
+                {% for tag in post.tags %}
+                    <a href="{{ url_for('tag_detail', tag_id=tag.id) }}">{{ tag.name }}</a>
+                {% endfor %}
+            </p>
+        {% endif %}
+        <a href="{{ url_for('post_detail', post_id=post.id) }}" class="btn btn-secondary">Back</a>
         <a href="{{ url_for('update_post', post_id=post.id) }}" class="btn btn-primary">Edit</a>
         <a href="{{ url_for('delete_post', post_id=post.id) }}" class="btn btn-danger">Delete</a>
     </div>
 </div>
+<div clas
+
 {% endblock %}
