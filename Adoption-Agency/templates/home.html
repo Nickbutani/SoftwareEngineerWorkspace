@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container" style="margin-top: 50px;">
+      <h1>Welcome to the Pet Store</h1>
+      <p>Feel free to browse our selection of pets</p>
+    </div>
+    
+    <div class="row pets-listing">
+
+        {% for pet in pets %}
+        <div class="col-3">
+          <img class="img-thumbnail" src="{{ pet.photo_url }}">
+          <a href="{{
+            url_for('edit_pet', pet_id=pet.id)
+           }}">{{ pet.name }}</a>
+           {% if pet.available %}
+            <p> is Available</p>
+            {% else %}
+            <p> is not Available</p>
+            {% endif %}
+        </div>
+        {% else %}
+        <div class="col-12">No pets yet.</div>
+        {% endfor %}
+      
+      </div>
+    <div class="add">
+        <a class="addPost" href="{{ url_for('add_pet') }}">Add a Pet</a>
+    </div>
+
+{% endblock %}
