@@ -1,0 +1,5 @@
+# Ignore venv directory created by virtual environments
+cup/
+
+# Ignore __pycache__ directory created by Python
+__pycache__/
