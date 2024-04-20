@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Edit Feedback{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="add-head">
+      <h1>Update Feedback</h1>
+  </div>
+  <div class="add-form">
+      <form action="/feedback/{{ feedback.id }}/update" method="post">
+          {{ form.csrf_token }}
+          {{ form.title.label }} {{ form.title }}
+          {{ form.content.label }} {{ form.content }}
+          <button type="submit">Submit</button>
+      </form>
+  </div>
+</div>
+{% endblock %}
